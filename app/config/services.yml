@@ -764,3 +764,5 @@ services:
   AppBundle\MessageHandler\ImportTasksHandler:
     arguments:
       $secret: '%secret%'
+
+  AppBundle\Service\SmsManager: ~

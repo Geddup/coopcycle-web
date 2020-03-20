@@ -838,3 +838,7 @@ basics.weeks: '%count% semaine|%count% semaines'
 basics.none: Aucun
 basics.yes: Oui
 basics.no: Non
+sms.tracking: |
+  Bonjour,
+  Votre livraison est en cours.
+  Suivez l'avancement sur %link%

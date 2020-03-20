@@ -105,3 +105,7 @@ services:
       $secret: '%secret%'
     tags:
       - { name: 'console.command', command: 'coopcycle:tasks:import' }
+
+  AppBundle\Command\SmsCommand:
+    tags:
+      - { name: 'console.command', command: 'coopcycle:notifications:sms' }

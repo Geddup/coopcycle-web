@@ -6,6 +6,7 @@ use AppBundle\Entity\Task;
 use AppBundle\Entity\Sylius\Order;
 use Doctrine\ORM\EntityManagerInterface;
 use Predis\Client as Redis;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -17,11 +18,16 @@ class GeofencingCommand extends Command
     private $doctrine;
     private $tile38;
     private $io;
+    private $logger;
 
-    public function __construct(EntityManagerInterface $doctrine, Redis $tile38)
+    public function __construct(
+        EntityManagerInterface $doctrine,
+        Redis $tile38,
+        LoggerInterface $logger)
     {
         $this->doctrine = $doctrine;
         $this->tile38 = $tile38;
+        $this->logger = $logger;
 
         parent::__construct();
     }
